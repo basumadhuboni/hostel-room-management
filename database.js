@@ -72,15 +72,7 @@ export async function showResidents(roomNumber, hostel) {
   );
   return result;
 }
-/*export async function showResidents(roomNumber,hostel) {
-  const result = await pool.query(
-    `select * from allocated_Rooms a
-      join student_information s on a.roll_Number = s.roll_Number
-      where room_Number = ? and hostel_Type= ?`,
-    [roomNumber,hostel]
-  );
-  return result;
-}*/
+
 export async function allot() {
   await pool.query(`CALL handle_roommate_requests()`);
   console.log("success");

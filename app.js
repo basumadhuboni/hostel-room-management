@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import sha256 from "sha256";
-import session from "express-session"; // Import express-session module
+import session from "express-session"; 
 import { fileURLToPath } from "url";
 
 import {
@@ -154,20 +154,7 @@ app.get("/showResidents", async (req, res) => {
       .json({ success: false, message: "Query execution failed!" });
   }
 });
-/*app.get("/showResidents", async (req, res) => {
-  const roomNumber = req.query.roomNumber;
-  const hostel=req.session.hostel_Type;
-  try {
-    const result = await showResidents(roomNumber,hostel);
-    console.log(result[0]);
-    res.send(result[0]);
-  } catch (error) {
-    console.error("Query execution failed!", error);
-    res
-      .status(500)
-      .json({ success: false, message: "Query execution failed!" });
-  }
-});*/
+
 app.get("/allot", async (req, res) => {
   try {
     const result = await allot();
